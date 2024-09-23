@@ -1,6 +1,6 @@
-a = ["Q", "R", "S", "L", "W", "W"]
+a = open("25.txt").readline()
 res = 0
-b = 0
+b = 2
 set1 = {"Q", "R", "S"}
 for i in range(0, len(a) - 2):
     set2 = {a[i], a[i+1], a[i+2]}
@@ -8,4 +8,7 @@ for i in range(0, len(a) - 2):
         res = max(res, b)
     else:
         b += 1
-print(res)#не до конца
+if {a[len(a)-3], a[len(a)-2], a[len(a)-1]} != {"Q", "R", "S"}:
+    print(b)
+else:
+    print(res)#999493
