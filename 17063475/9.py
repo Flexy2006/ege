@@ -1,0 +1,1 @@
+print(bin(94), bin(64))
