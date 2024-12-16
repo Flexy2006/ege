@@ -1,6 +1,12 @@
-print("x y z")
-for x in range(0, 2):
-    for y in range(0, 2):
-        for z in range(0, 2):
-             if not((x or y) <= (y == z)):
-                print(x, y, z)
+from itertools import *
+
+def f1(x, y, z):
+        return (x or y) <=  (y == z)
+
+
+for a1, a2, a3 in product([0, 1], repeat=3):
+    tab = [(0, 0, a1), (0, a2, a3)]
+    if len(tab) == len(set(tab)):
+        for p in permutations('xyz'):
+            if [f1(**dict(zip(p, r))) for r in tab] == [0, 0]:
+                print(p)#zyxw

@@ -1,14 +1,9 @@
-a = open("1010.txt")
-q = 0
-flag = 0
+a = open('1000.txt')
+b = 0
 for i in a:
-    b = [int(j) for j in i.split()]
-    if b.count(max(b)) == 1:
-        for k in range(len(b)):
-            if b.count(b[k]) > 1:
-                flag = 1
-                break
-        if flag == 1:
-            if max(b) > (sum(b)-max(b))/5 * 3:
-                q += 1
-print(q)#561
+    c = [int(j) for j in i.split()]
+    if c.count(max(c)) == 1:
+        if len(set(c)) < len(c):
+            if max(c) > ((sum(c) - max(c))/5)*3:
+                b += 1
+print(b)
